@@ -9,7 +9,7 @@ This Library allows to display your mining progress through the raiminer.com api
 
 ## Usage
 
-The simplest way to see how it works is the check out [the example that comes with the library](https://github.com/benjholl/arduino-raiminer-api).
+The simplest way to see how it works is the check out [the example that comes with the library](https://github.com/benjholl/arduino-raiminer-api/blob/master/examples/ESP8266/GetRaiMinerStats/GetRaiMinerStats.ino).
 
 
 ### Get Stats
