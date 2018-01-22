@@ -25,7 +25,8 @@ struct MinerStats {
 	unsigned long xrb_withdrawn;
 	unsigned long xrb_balance;
 	double balance;
-	String error;
+	String error;	
+	unsigned long auto_withdraw_timer;
 };
 ```
 

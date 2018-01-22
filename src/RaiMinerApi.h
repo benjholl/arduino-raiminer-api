@@ -31,6 +31,7 @@ struct MinerStats {
 	unsigned long xrb_balance;
 	double balance;
 	String error;
+	unsigned long auto_withdraw_timer;
 };
 
 struct MinerWithdraw{

@@ -100,15 +100,18 @@ MinerStats RaiMinerApi::GetStats(bool autoWithdraw) {
 	unsigned long timeNow;
 	if (autoWithdraw) timeNow = millis();
 	
-	if (withdraw_duetime == 0 && autoWithdraw){
+	if (withdraw_duetime == 0 && autoWithdraw)
 		withdraw_duetime = timeNow + withdraw_time;
-	}
 	
-	if (timeNow > withdraw_duetime && autoWithdraw)  {    
+	if (timeNow > withdraw_duetime && autoWithdraw)    
 		Withdraw(this->adress);
-	}
 	
-	return GetStats(this->adress);
+	MinerStats stats = GetStats(this->adress);
+	
+	if (autoWithdraw)
+		stats.auto_withdraw_timer = (withdraw_duetime - timeNow) / 1000;
+	
+	return stats;
 	
 }
 
