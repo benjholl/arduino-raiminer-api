@@ -82,11 +82,11 @@ void displayStat(bool autoWithdraw) {
   display.drawBitmap(15, 17,  pick, 32, 16, 1);
   display.setTextSize(1);    
   display.setCursor(53,17);  
-  sprintf(string, "+%03d uxrb",stats.xrb_balance);
+  sprintf(string, "+%03d uXRB",stats.xrb_balance);
   display.println(string);
   display.setCursor(53,25);  
   if (stats.auto_withdraw_timer > 0)
-     sprintf(string, "in %02d min",stats.auto_withdraw_timer/60);
+     sprintf(string, "in %03d min",stats.auto_withdraw_timer/60);
   else
      sprintf(string, "pending");
   display.println(string);  

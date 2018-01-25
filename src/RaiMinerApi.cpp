@@ -1,9 +1,9 @@
 #include "RaiMinerApi.h"
 
 
-unsigned long withdraw_time = 1000 * 60 * 61; // mean time between withdraws (61min)
+unsigned long withdraw_time = 1000 * 60 * 121; 	// mean time between withdraws (121min)
+unsigned int  withdraw_min = 10;				// minimum withdraw amount
 unsigned long withdraw_duetime = 0;
-
 
 RaiMinerApi::RaiMinerApi(Client &client, String xrb_adr)	{
   this->client = &client;
@@ -164,7 +164,7 @@ MinerWithdraw RaiMinerApi::Withdraw(String xrb_adr) {
 	
 	MinerWithdraw responseObject = MinerWithdraw();
 		
-	if (Current.balance < 1){
+	if (Current.xrb_balance < withdraw_min){
 		responseObject.error = "insufficient balance";
 		return responseObject;
 	}

@@ -59,15 +59,15 @@ void printStat(bool autoWithdraw) {
   if (stats.error == "") {
     Serial.print("Total Mined: ");
     Serial.print(stats.xrb_mined);
-    Serial.println(" uxrb ");
+    Serial.println(" uXRB ");
     
     Serial.print("Withdrawn: ");
     Serial.print(stats.xrb_withdrawn);
-    Serial.println(" uxrb ");
+    Serial.println(" uXRB ");
     
     Serial.print("Balance: ");
     Serial.print(stats.xrb_balance);
-    Serial.print(" uxrb (");
+    Serial.print(" uXRB (");
     Serial.print(stats.balance);
     Serial.println(" Hashes)");
   } else {

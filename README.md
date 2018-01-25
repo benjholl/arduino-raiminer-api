@@ -37,7 +37,7 @@ struct MinerStats {
 RaiMinerApi rai(client, xrb_adress);
 MinerStats stats = rai.Withdraw();
 ```
-tries to withdraw your mined XRB to your Wallet. Note that withdrawals are limited to one per hour, 1 uxrb minimum.
+tries to withdraw your mined uXRB to your Wallet. Note that withdrawals are limited to one per two hours, 10 uXRB minimum.
 You will get a MinerWithdraw Object as response: 
 ```
 struct MinerWithdraw{
@@ -51,9 +51,9 @@ Checking the progress and retrieving the Block ID are not implemnented in this l
 
 ### automatic Withdraw
 
-if you do Status requests on a regular basis, you can use the following Code to automatically withdraw your XRB every 61 Minutes:
+if you do Status requests on a regular basis, you can use the following Code to automatically withdraw your XRB every 121 Minutes:
 ```
 RaiMinerApi rai(client, xrb_adress);
 MinerStats stats = rai.GetStats(true);
 ```
-Note that the first withdraw request will always be sent 61 Minutes after loading the Program, the second one 122 Minutes after loading the Program and so on. 
+Note that the first withdraw request will always be sent 121 Minutes after loading the Program, the second one 242 Minutes after loading the Program and so on. 
